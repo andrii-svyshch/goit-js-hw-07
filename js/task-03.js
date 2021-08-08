@@ -15,12 +15,12 @@ const images = [
 
 const listRef = document.querySelector('#gallery');
 
-images.forEach(picture =>
-  listRef.insertAdjacentHTML(
-    'beforeend',
-    `<li><img src=${picture.url} alt=${picture.alt} width=300px></li>`,
-  ),
-);
+let string = '';
+images.forEach(picture => {
+  string += `<li><img src=${picture.url} alt=${picture.alt} width=300px></li>`;
+});
+
+listRef.insertAdjacentHTML('beforeend', string);
 
 listRef.style.display = 'flex';
 listRef.style.justifyContent = 'space-evenly';
